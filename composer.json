@@ -1,0 +1,32 @@
+{
+    "name": "foreup/sdk",
+    "type": "standard",
+    "description": "ForeUp API PHP SDK.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "foreUP API Team",
+            "email": "PimentelKevin06@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "require-dev": {
+        "guzzlehttp/guzzle": "^6.3 || ^7.0",
+        "phpunit/phpunit": ">=4.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "ForeUp\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ForeUp\\Tests\\": "tests/"
+        }
+    }
+}
+
+
+
