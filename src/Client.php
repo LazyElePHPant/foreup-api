@@ -4,15 +4,18 @@ namespace ForeUP\PHPSDK;
 
 use ForeUP\PHPSDK\Exceptions\InvalidCredentialException;
 use GuzzleHttp\Client as GuzzleClient;
+use ForeUP\PHPSDK\Customer;
 
 class Client
 {
     private $username;
     private $password;
 
+    protected $client;
+
     public function __construct(string $username = null, string $password = null, string $base_uri = null)
     {
-        if (! $username || ! $password || ! $base_uri) {
+        if (is_null($username) || is_null($password) || is_null($base_uri)) {
             throw new InvalidCredentialException('API credentials must be provided.');
         }
 
@@ -24,10 +27,10 @@ class Client
         ]);
     }
 
-    public function getToken($endpoint = '/api_rest/index.php/tokens')
+    public function getToken($endpoint = 'tokens')
     {
         try {
-            $response = $this->client->post($endpoint, [
+            $response = $this->client->post("/api_rest/index.php/{$endpoint}", [
                 'query' => [
                     'email' => $this->username,
                     'password' => $this->password
@@ -39,5 +42,10 @@ class Client
         } catch (\Exception $e) {
             throw new \Exception($e->getMessage());
         }
+    }
+
+    public function customer()
+    {
+        return new Customer($this->client);
     }
 }

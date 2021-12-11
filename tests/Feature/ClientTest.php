@@ -33,6 +33,7 @@ class ClientTest extends TestCase
         $client = new Client('devtesting', 'devtesting1', $base_uri);
 
         $this->expectException(\Exception::class);
-        $token = $client->getToken('/tokens');
+
+        $token = $client->getToken('tok');
     }
 }
