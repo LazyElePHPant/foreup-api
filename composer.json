@@ -1,7 +1,7 @@
 {
-    "name": "foreup/sdk",
+    "name": "foreup/php-sdk",
     "type": "standard",
-    "description": "ForeUp API PHP SDK.",
+    "description": "ForeUP API PHP SDK.",
     "license": "MIT",
     "authors": [
         {
@@ -18,12 +18,12 @@
     },
     "autoload": {
         "psr-4": {
-            "ForeUp\\": "src/"
+            "ForeUP\\PHPSDK\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ForeUp\\Tests\\": "tests/"
+            "ForeUP\\PHPSDK\\Tests\\": "tests/"
         }
     }
 }
