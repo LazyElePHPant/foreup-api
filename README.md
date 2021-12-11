@@ -2,7 +2,7 @@
 
 ## Documentation
 
-The documentation for the ForeUP API can be found [here][https://foreup.docs.apiary.io/].
+The documentation for the ForeUP API can be found [`here`](https://foreup.docs.apiary.io/).
 
 ## Installation
 
@@ -29,9 +29,14 @@ $client = new ForeUPClient($email, $password, $base_uri);
 
 ### Create a Token
 
+To authenticate with the api you must first create a JWT using your username/password. To learn more about JWT go [`here`](https://jwt.io/).
+
 ```php
 
-$client->getToken();
+$token = $client->getToken();
+
+$token->data->type // token
+$token->data->id //   "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJmb3JldXBzb2Z0d2FyZS5jb20iLCJhdWQiOiJmb3JldXBzb2Z0d2FyZS5jb20iLCJpYXQiOjE0NzQ5MjI5MzgsImV4cCI6MTQ3NzUxNDkzOCwibGV2ZWwiOjAsImNpZCI6MCwiZW1wbG95ZWUiOmZhbHNlLCJ1aWQiOjY0ODI3Mjh9.go-Bf_6X8qByMu9JblewsmQt1dsqOu_70z6IlYYaZgGbsvjf9uQI0-RFSEivALntv0HF6-6WN9T5FxLpGyxcNA",
 ```
 
 ### Create a Customer
@@ -74,4 +79,13 @@ $customer = [
         ]
     ]
 ];
+```
+
+### Testing
+
+You may run the tests with the following command:
+
+```php
+
+phpunit vendor/foreup/
 ```
