@@ -22,7 +22,7 @@ composer require foreup/php-sdk
 ```php
 <?php
 
-use ForeUP\SDKPHP\Client as ForeUPClient;
+use ForeUP\PHPSDK\Client as ForeUPClient;
 
 $client = new ForeUPClient($email, $password, $base_uri);
 ```
